@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#243247">
+  <title>马斯克的选择 02｜公众号排版</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eeeae4; color: #2b2b2b; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif; }
+    .toolbar { position: sticky; top: 0; z-index: 10; padding: 12px max(14px,env(safe-area-inset-left)); background: rgba(36,50,71,.96); box-shadow: 0 3px 14px rgba(20,28,40,.18); }
+    .toolbar-inner { max-width: 677px; margin: 0 auto; display: flex; gap: 10px; align-items: center; }
+    button { min-height: 42px; border: 0; border-radius: 7px; padding: 0 16px; font-size: 15px; font-weight: 650; cursor: pointer; }
+    .primary { flex: 1; background: #d95436; color: #fff; }
+    .secondary { background: #fff; color: #243247; }
+    .status { max-width: 677px; min-height: 20px; margin: 7px auto 0; color: #f6f4f0; font-size: 12px; text-align: center; }
+    .page { width: min(100% - 24px, 677px); margin: 24px auto 48px; background: #fff; box-shadow: 0 12px 38px rgba(31,37,48,.10); }
+    .preview-title { padding: 35px 28px 22px; border-bottom: 1px solid #ebe7e1; background: #fbfaf7; }
+    .preview-title small { color: #d95436; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+    .preview-title h1 { margin: 12px 0 0; color: #202733; font-size: 27px; line-height: 1.38; letter-spacing: .3px; }
+    @media (max-width: 520px) {
+      .toolbar-inner { flex-wrap: wrap; }
+      button { flex: 1 1 42%; }
+      .page { width: 100%; margin: 0 auto; box-shadow: none; }
+      .preview-title { padding: 30px 22px 20px; }
+      .preview-title h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-inner">
+      <button class="secondary" id="copy-title">复制标题</button>
+      <button class="primary" id="copy-body">复制排版正文</button>
+    </div>
+    <div class="status" id="status">先复制标题，再复制正文到公众号编辑器</div>
+  </header>
+
+  <main class="page">
+    <section class="preview-title">
+      <small>马斯克的选择 · 02</small>
+      <h1 id="article-title">前三次都失败，马斯克为什么还敢押上第四次</h1>
+    </section>
+
+    <article id="wechat-body" style="max-width:677px;margin:0 auto;padding:28px 22px 38px;background:#ffffff;color:#2b2b2b;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;font-size:16px;line-height:1.9;letter-spacing:.15px;word-break:break-word;">
+      <section style="margin:0 0 28px;padding:13px 16px;background:#f6f4f0;border-left:3px solid #d95436;border-radius:0 6px 6px 0;">
+        <p style="margin:0;color:#243247;font-size:14px;line-height:1.75;font-weight:600;">马斯克的选择 · 02</p>
+        <p style="margin:5px 0 0;color:#756f68;font-size:13px;line-height:1.7;">失败并不可怕。可怕的是，下一次仍不知道该改什么。</p>
+      </section>
+
+      <section style="margin:0 0 27px;padding:0;">
+        <img src="https://jiangzhenxiang.github.io/wechat/musk-02/assets/falcon1-flight3-failure.jpg" alt="Falcon 1第三次发射时发生级间碰撞的插画" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:6px;">
+        <p style="margin:8px 2px 0;color:#8a847d;font-size:11px;line-height:1.6;text-align:center;">第三次发射，火箭倒在了离成功很近的地方。｜GPT Image 生成</p>
+      </section>
+
+      <p style="margin:0 0 18px;">2008年8月2日，Falcon 1第三次升空。</p>
+      <p style="margin:0 0 18px;">起飞、加速、一级发动机关闭，一切看起来都很正常。</p>
+      <p style="margin:0 0 18px;">就在一二级分离时，意外发生了。</p>
+      <p style="margin:0 0 18px;">一级发动机关闭后还残留着一点推力。已经分开的一级继续向前，撞上了刚刚点火的二级。</p>
+      <p style="margin:0 0 18px;">火箭没能进入轨道。</p>
+
+      <section style="margin:29px 0;padding:19px 18px;background:#243247;border-radius:6px;text-align:center;">
+        <p style="margin:0;color:#ffffff;font-size:20px;line-height:1.55;font-weight:700;letter-spacing:1px;">三次发射，三次失败。</p>
+      </section>
+
+      <p style="margin:0 0 18px;">马斯克原本只准备了三次发射的钱。此时的SpaceX没有成功记录，金融危机又正在逼近，外部融资几乎没有希望。</p>
+      <p style="margin:0 0 18px;">剩下的钱，只够再造最后一枚火箭。</p>
+      <p style="margin:0 0 18px;">为什么还要继续？</p>
+      <p style="margin:0 0 18px;">因为在工程师眼里，三次失败并不是三个一模一样的零。</p>
+      <p style="margin:0 0 18px;">第一次，火箭升空不久便坠毁。第二次，它飞得更高，已经接近轨道。第三次，大部分系统都正常，问题缩小到了级间分离的时序。</p>
+      <p style="margin:0 0 18px;">他们没有推倒重来，只是让一级发动机关闭与级间分离之间多等一会儿，给残余推力一点消失的时间。</p>
+      <p style="margin:0 0 18px;">这仍然是一场豪赌，但不是闭着眼睛下注。</p>
+
+      <section style="margin:27px 0;padding:0;">
+        <img src="https://jiangzhenxiang.github.io/wechat/musk-02/assets/falcon1-flight4-control.jpg" alt="马斯克与SpaceX团队等待Falcon 1第四次发射结果的插画" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:6px;">
+        <p style="margin:8px 2px 0;color:#8a847d;font-size:11px;line-height:1.6;text-align:center;">第四次，他们终于等到了进入轨道的信号。｜GPT Image 生成</p>
+      </section>
+
+      <p style="margin:0 0 18px;">2008年9月28日，第四枚Falcon 1从太平洋上的奥梅莱克岛升空。</p>
+      <p style="margin:0 0 18px;">这一次，级间顺利分离，二级发动机继续工作，火箭最终进入轨道。</p>
+      <p style="margin:0 0 18px;">SpaceX成了第一家用私人资金研制的液体燃料火箭进入地球轨道的公司。</p>
+      <p style="margin:0 0 18px;">后来的人只记住了第四次的成功，却很容易忽略前三次失败真正留下的东西：每一次，问题都变得更清楚了一点。</p>
+
+      <section style="margin:30px 0 26px;padding:21px 19px;background:#f6f4f0;border-left:3px solid #d95436;border-radius:0 6px 6px 0;">
+        <p style="margin:0 0 9px;color:#243247;font-size:18px;line-height:1.7;font-weight:700;">真正有价值的坚持，不是重复一句&quot;再来一次&quot;。</p>
+        <p style="margin:0;color:#243247;font-size:18px;line-height:1.7;font-weight:700;">而是下一次出发时，已经知道要改哪一个地方。</p>
+      </section>
+
+      <p style="margin:0 0 18px;">真正危险的，是失败三次以后，手里只剩下一句&quot;再试一次&quot;，却说不清下一次要改什么。</p>
+
+      <section style="margin:32px 0 0;padding-top:20px;border-top:1px solid #e8e3dc;">
+        <p style="margin:0;color:#d95436;font-size:14px;line-height:1.8;font-weight:650;">下一篇：卖掉PayPal后，他为什么把赚到的钱几乎全部押了出去。</p>
+      </section>
+
+      <section style="margin:28px 0 0;padding:15px 16px;background:#fbfaf7;border:1px solid #ebe7e1;border-radius:6px;">
+        <p style="margin:0 0 8px;color:#756f68;font-size:12px;line-height:1.7;font-weight:650;">资料来源</p>
+        <p style="margin:0;color:#8a847d;font-size:11px;line-height:1.8;">SpaceX早期发射记录、NASA历史资料，以及马斯克公开演讲与访谈。图片为GPT Image生成的叙事插画，并非历史照片。</p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    const statusNode = document.getElementById('status');
+    const articleNode = document.getElementById('wechat-body');
+    const titleNode = document.getElementById('article-title');
+
+    function setStatus(message) {
+      statusNode.textContent = message;
+      window.clearTimeout(setStatus.timer);
+      setStatus.timer = window.setTimeout(() => {
+        statusNode.textContent = '先复制标题，再复制正文到公众号编辑器';
+      }, 3200);
+    }
+
+    async function copyPlain(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    }
+
+    async function copyRich(node) {
+      const html = node.innerHTML;
+      const plain = node.innerText;
+      if (navigator.clipboard && window.ClipboardItem && window.isSecureContext) {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([plain], { type: 'text/plain' })
+          })
+        ]);
+        return;
+      }
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+      selection.removeAllRanges();
+    }
+
+    document.getElementById('copy-title').addEventListener('click', async () => {
+      try {
+        await copyPlain(titleNode.textContent.trim());
+        setStatus('标题已复制，请粘贴到公众号标题栏。');
+      } catch (error) {
+        setStatus('复制失败，请长按标题手动复制。');
+      }
+    });
+
+    document.getElementById('copy-body').addEventListener('click', async () => {
+      try {
+        await copyRich(articleNode);
+        setStatus('排版正文已复制，请粘贴到公众号正文区。');
+      } catch (error) {
+        setStatus('自动复制失败，请长按正文选择复制。');
+      }
+    });
+  </script>
+</body>
+</html>
