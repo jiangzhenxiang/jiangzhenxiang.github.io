@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#243247">
+  <title>马斯克的选择 03｜公众号排版</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eeeae4; color: #2b2b2b; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif; }
+    .toolbar { position: sticky; top: 0; z-index: 10; padding: 12px max(14px,env(safe-area-inset-left)); background: rgba(36,50,71,.96); box-shadow: 0 3px 14px rgba(20,28,40,.18); }
+    .toolbar-inner { max-width: 677px; margin: 0 auto; display: flex; gap: 10px; align-items: center; }
+    button { min-height: 42px; border: 0; border-radius: 7px; padding: 0 16px; font-size: 15px; font-weight: 650; cursor: pointer; }
+    .primary { flex: 1; background: #d95436; color: #fff; }
+    .secondary { background: #fff; color: #243247; }
+    .status { max-width: 677px; min-height: 20px; margin: 7px auto 0; color: #f6f4f0; font-size: 12px; text-align: center; }
+    .page { width: min(100% - 24px, 677px); margin: 24px auto 48px; background: #fff; box-shadow: 0 12px 38px rgba(31,37,48,.10); }
+    .preview-title { padding: 35px 28px 22px; border-bottom: 1px solid #ebe7e1; background: #fbfaf7; }
+    .preview-title small { color: #d95436; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+    .preview-title h1 { margin: 12px 0 0; color: #202733; font-size: 27px; line-height: 1.38; letter-spacing: .3px; }
+    @media (max-width: 520px) {
+      .toolbar-inner { flex-wrap: wrap; }
+      button { flex: 1 1 42%; }
+      .page { width: 100%; margin: 0 auto; box-shadow: none; }
+      .preview-title { padding: 30px 22px 20px; }
+      .preview-title h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-inner">
+      <button class="secondary" id="copy-title">复制标题</button>
+      <button class="primary" id="copy-body">复制排版正文</button>
+    </div>
+    <div class="status" id="status">先复制标题，再复制正文到公众号编辑器</div>
+  </header>
+
+  <main class="page">
+    <section class="preview-title">
+      <small>马斯克的选择 · 03</small>
+      <h1 id="article-title">赚到1.8亿美元后，马斯克为什么又把自己变穷</h1>
+    </section>
+
+    <article id="wechat-body" style="max-width:677px;margin:0 auto;padding:28px 22px 38px;background:#ffffff;color:#2b2b2b;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;font-size:16px;line-height:1.9;letter-spacing:.15px;word-break:break-word;">
+      <section style="margin:0 0 28px;padding:13px 16px;background:#f6f4f0;border-left:3px solid #d95436;border-radius:0 6px 6px 0;">
+        <p style="margin:0;color:#243247;font-size:14px;line-height:1.75;font-weight:600;">马斯克的选择 · 03</p>
+        <p style="margin:5px 0 0;color:#756f68;font-size:13px;line-height:1.7;">许多人创业，是为了有一天不再冒险。他却把赚到的钱，重新送回了风险里。</p>
+      </section>
+
+      <section style="margin:0 0 27px;padding:0;">
+        <img src="https://jiangzhenxiang.github.io/wechat/musk-03/assets/paypal-after-sale.jpg" alt="马斯克在PayPal出售后独自思考资金去向的插画" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:6px;">
+        <p style="margin:8px 2px 0;color:#8a847d;font-size:11px;line-height:1.6;text-align:center;">财富自由之后，他先想的不是如何退休。｜GPT Image 生成</p>
+      </section>
+
+      <p style="margin:0 0 18px;">2002年，eBay以约15亿美元收购PayPal。</p>
+      <p style="margin:0 0 18px;">作为PayPal最大的个人股东，马斯克拿到了约1.8亿美元。</p>
+      <p style="margin:0 0 18px;">32岁，财富自由。</p>
+      <p style="margin:0 0 18px;">换成多数人，故事到这里已经可以结束了。</p>
+      <p style="margin:0 0 18px;">买房，投资，退休。哪怕只把钱放进最普通的资产里，他也不必再为钱发愁。</p>
+      <p style="margin:0 0 18px;">但马斯克做了相反的选择。</p>
+
+      <section style="margin:29px 0;padding:19px 18px;background:#243247;border-radius:6px;text-align:center;">
+        <p style="margin:0;color:#ffffff;font-size:20px;line-height:1.55;font-weight:700;letter-spacing:1px;">他用财富自由，换回了再次失败的可能。</p>
+      </section>
+
+      <p style="margin:0 0 18px;">此后几年，他陆续向SpaceX投入约1亿美元，向特斯拉投入约7000万美元，又向SolarCity投入约1000万美元。</p>
+      <p style="margin:0 0 18px;">加起来，差不多就是他从PayPal得到的全部资金。</p>
+      <p style="margin:0 0 18px;">后来他回忆，那段时间自己甚至需要借钱支付生活开支。</p>
+      <p style="margin:0 0 18px;">很多人把这件事总结成两个字：敢赌。</p>
+      <p style="margin:0 0 18px;">但“赌”并不能解释他的选择。</p>
+      <p style="margin:0 0 18px;">赌徒关心的是赢了以后能得到多少钱。</p>
+      <p style="margin:0 0 18px;">马斯克更像是在问：如果钱不能帮助我做真正想做的事，那它还有什么用？</p>
+
+      <section style="margin:27px 0;padding:0;">
+        <img src="https://jiangzhenxiang.github.io/wechat/musk-03/assets/three-bets.jpg" alt="马斯克把资金投向火箭、电动车和太阳能事业的插画" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:6px;">
+        <p style="margin:8px 2px 0;color:#8a847d;font-size:11px;line-height:1.6;text-align:center;">火箭、电动车和太阳能，是三家公司，也是同一次选择。｜GPT Image 生成</p>
+      </section>
+
+      <p style="margin:0 0 18px;">造火箭、做电动车、推广太阳能，看上去是三门完全不同的生意。</p>
+      <p style="margin:0 0 18px;">背后却是同一个判断：能源和太空，可能决定人类未来几十年的方向。</p>
+      <p style="margin:0 0 18px;">所以，他不是把钱随便押在三家公司上。</p>
+      <p style="margin:0 0 18px;">他是在用已经赚到的钱，为自己的判断购买一次实现的机会。</p>
+      <p style="margin:0 0 18px;">这当然不是什么值得照搬的理财方法。</p>
+      <p style="margin:0 0 18px;">如果SpaceX第四次发射继续失败，如果特斯拉没有熬过2008年，今天流传的可能不是传奇，而是一场典型的创业灾难。</p>
+      <p style="margin:0 0 18px;">幸存者的故事，最容易让风险显得浪漫。</p>
+
+      <section style="margin:30px 0 26px;padding:21px 19px;background:#f6f4f0;border-left:3px solid #d95436;border-radius:0 6px 6px 0;">
+        <p style="margin:0 0 9px;color:#243247;font-size:18px;line-height:1.7;font-weight:700;">许多人创业，是为了有一天不用再冒险。</p>
+        <p style="margin:0;color:#243247;font-size:18px;line-height:1.7;font-weight:700;">马斯克赚钱以后，却用全部筹码，把自己送回了风险里。</p>
+      </section>
+
+      <p style="margin:0 0 18px;">对他来说，财富从来不是终点。</p>
+      <p style="margin:0 0 18px;">只是下一次发射前，装进火箭的燃料。</p>
+
+      <section style="margin:32px 0 0;padding-top:20px;border-top:1px solid #e8e3dc;">
+        <p style="margin:0;color:#d95436;font-size:14px;line-height:1.8;font-weight:650;">下一篇：被自己创办的公司赶走后，马斯克学会了什么。</p>
+      </section>
+
+      <section style="margin:28px 0 0;padding:15px 16px;background:#fbfaf7;border:1px solid #ebe7e1;border-radius:6px;">
+        <p style="margin:0 0 8px;color:#756f68;font-size:12px;line-height:1.7;font-weight:650;">资料来源</p>
+        <p style="margin:0;color:#8a847d;font-size:11px;line-height:1.8;">美国证券交易委员会披露的eBay收购公告，以及马斯克对PayPal所得与后续投资金额的公开回忆。投资发生在此后数年，并非同一天完成。图片为GPT Image生成的叙事插画，并非历史照片。</p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    const statusNode = document.getElementById('status');
+    const articleNode = document.getElementById('wechat-body');
+    const titleNode = document.getElementById('article-title');
+
+    function setStatus(message) {
+      statusNode.textContent = message;
+      window.clearTimeout(setStatus.timer);
+      setStatus.timer = window.setTimeout(() => {
+        statusNode.textContent = '先复制标题，再复制正文到公众号编辑器';
+      }, 3200);
+    }
+
+    async function copyPlain(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    }
+
+    async function copyRich(node) {
+      const html = node.innerHTML;
+      const plain = node.innerText;
+      if (navigator.clipboard && window.ClipboardItem && window.isSecureContext) {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([plain], { type: 'text/plain' })
+          })
+        ]);
+        return;
+      }
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand('copy');
+      selection.removeAllRanges();
+    }
+
+    document.getElementById('copy-title').addEventListener('click', async () => {
+      try {
+        await copyPlain(titleNode.textContent.trim());
+        setStatus('标题已复制，请粘贴到公众号标题栏。');
+      } catch (error) {
+        setStatus('复制失败，请长按标题手动复制。');
+      }
+    });
+
+    document.getElementById('copy-body').addEventListener('click', async () => {
+      try {
+        await copyRich(articleNode);
+        setStatus('排版正文已复制，请粘贴到公众号正文区。');
+      } catch (error) {
+        setStatus('自动复制失败，请长按正文选择复制。');
+      }
+    });
+  </script>
+</body>
+</html>
