@@ -1,0 +1,4 @@
+interface:
+  display_name: "公众号排版发布"
+  short_description: "生成带插图的排版页，并按需发布到 GitHub Pages"
+  default_prompt: "使用 $wechat-publisher 把这篇文章制作成带插图、可一键复制到公众号的排版页。"
