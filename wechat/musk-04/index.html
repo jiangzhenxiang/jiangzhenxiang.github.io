@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#243247">
+  <title>马斯克的选择 04｜公众号排版</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eeeae4; color: #2b2b2b; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif; }
+    .toolbar { position: sticky; top: 0; z-index: 10; padding: 12px max(14px,env(safe-area-inset-left)); background: rgba(36,50,71,.96); box-shadow: 0 3px 14px rgba(20,28,40,.18); }
+    .toolbar-inner { max-width: 677px; margin: 0 auto; display: flex; gap: 10px; align-items: center; }
+    button { min-height: 42px; border: 0; border-radius: 7px; padding: 0 16px; font-size: 15px; font-weight: 650; cursor: pointer; }
+    .primary { flex: 1; background: #d95436; color: #fff; }
+    .secondary { background: #fff; color: #243247; }
+    .status { max-width: 677px; min-height: 20px; margin: 7px auto 0; color: #f6f4f0; font-size: 12px; text-align: center; }
+    .page { width: min(100% - 24px, 677px); margin: 24px auto 48px; background: #fff; box-shadow: 0 12px 38px rgba(31,37,48,.10); }
+    .preview-title { padding: 35px 28px 22px; border-bottom: 1px solid #ebe7e1; background: #fbfaf7; }
+    .preview-title small { color: #d95436; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+    .preview-title h1 { margin: 12px 0 0; color: #202733; font-size: 27px; line-height: 1.38; letter-spacing: .3px; }
+    @media (max-width: 520px) {
+      .toolbar-inner { flex-wrap: wrap; }
+      button { flex: 1 1 42%; }
+      .page { width: 100%; margin: 0 auto; box-shadow: none; }
+      .preview-title { padding: 30px 22px 20px; }
+      .preview-title h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-inner">
+      <button class="secondary" id="copy-title">复制标题</button>
+      <button class="primary" id="copy-body">复制排版正文</button>
+    </div>
+    <div class="status" id="status">先复制标题，再复制正文到公众号编辑器</div>
+  </header>
+
+  <main class="page">
+    <section class="preview-title">
+      <small>马斯克的选择 · 04</small>
+      <h1 id="article-title">度蜜月时被罢免，马斯克为什么没有掀桌</h1>
+    </section>
+
+    <article id="wechat-body" style="max-width:677px;margin:0 auto;padding:28px 22px 38px;background:#ffffff;color:#2b2b2b;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif;font-size:16px;line-height:1.9;letter-spacing:.15px;word-break:break-word;">
+      <section style="margin:0 0 28px;padding:13px 16px;background:#f6f4f0;border-left:3px solid #d95436;border-radius:0 6px 6px 0;">
+        <p style="margin:0;color:#243247;font-size:14px;line-height:1.75;font-weight:600;">马斯克的选择 · 04</p>
+        <p style="margin:5px 0 0;color:#756f68;font-size:13px;line-height:1.7;">在最愤怒的时候，能不能把自尊和利益分开？</p>
+      </section>
+
+      <section style="margin:0 0 27px;padding:0;">
+        <img src="https://jiangzhenxiang.github.io/wechat/musk-04/assets/honeymoon-ouster.jpg" alt="马斯克在度蜜月途中得知董事会罢免决定的插画" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:6px;">
+        <p style="margin:8px 2px 0;color:#8a847d;font-size:11px;line-height:1.6;text-align:center;">飞机还没回来，公司已经不归他管了。｜GPT Image 生成</p>
+      </section>
+
+      <p style="margin:0 0 18px;">2000年，马斯克去澳大利亚度蜜月。</p>
+      <p style="margin:0 0 18px;">飞机还没回来，公司已经不归他管了。</p>
+      <p style="margin:0 0 18px;">几个月前，他创办的X.com刚与竞争对手Confinity合并。</p>
+      <p style="margin:0 0 18px;">马斯克担任CEO，Peter Thiel和Max Levchin则掌握着另一支核心团队。</p>
+      <p style="margin:0 0 18px;">双方很快吵了起来。</p>
+      <p style="margin:0 0 18px;">马斯克想用X.com统一品牌，还坚持更换公司的技术系统。</p>
+      <p style="margin:0 0 18px;">其他高管认为，这些决定太冒险。</p>
+      <p style="margin:0 0 18px;">当马斯克离开美国度蜜月时，几名高管找到董事会，要求换掉CEO。</p>
+      <p style="margin:0 0 18px;">马斯克得知消息后提前返程。</p>
+      <p style="margin:0 0 18px;">但已经晚了。</p>
+
+      <section style="margin:29px 0;padding:19px 18px;background:#243247;border-radius:6px;text-align:center;">
+        <p style="margin:0;color:#ffffff;font-size:20px;line-height:1.55;font-weight:700;letter-spacing:1px;">董事会投票罢免了他。</p>
+      </section>
+
+      <p style="margin:0 0 18px;">Peter Thiel重新出任CEO。</p>
+      <p style="margin:0 0 18px;">自己创办的公司，自己投入的钱，最后却连CEO的位置都保不住。</p>
+      <p style="margin:0 0 18px;">换成很多人，接下来大概是一场公开决裂。</p>
+      <p style="margin:0 0 18px;">卖掉股份，起诉公司，和昔日伙伴彻底翻脸。</p>
+      <p style="margin:0 0 18px;">马斯克当然愤怒。</p>
+      <p style="margin:0 0 18px;">但他没有掀桌。</p>
+      <p style="margin:0 0 18px;">他接受了董事会的决定，继续留在董事会担任顾问，也没有因为赌气卖掉手里的股份。</p>
+
+      <section style="margin:27px 0;padding:0;">
+        <img src="https://jiangzhenxiang.github.io/wechat/musk-04/assets/seat-and-shares.jpg" alt="马斯克离开CEO座位但保留公司股份的插画" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:6px;">
+        <p style="margin:8px 2px 0;color:#8a847d;font-size:11px;line-height:1.6;text-align:center;">CEO的椅子没了，但他的股份仍留在手里。｜GPT Image 生成</p>
+      </section>
+
+      <p style="margin:0 0 18px;">后来，公司放弃X.com这个名字，把核心支付产品正式改名为PayPal。</p>
+      <p style="margin:0 0 18px;">事实证明，Peter Thiel和团队的选择是对的。</p>
+      <p style="margin:0 0 18px;">2002年，eBay以约15亿美元收购PayPal。</p>
+      <p style="margin:0 0 18px;">失去CEO职位的马斯克，仍然是公司最大的个人股东，最终拿到了约1.8亿美元。</p>
+      <p style="margin:0 0 18px;">这段经历最值得看的，不是“被赶走后逆袭”。</p>
+      <p style="margin:0 0 18px;">而是一个人在最愤怒的时候，有没有把自尊和利益分开。</p>
+      <p style="margin:0 0 18px;">马斯克没有赢下那场权力斗争。</p>
+      <p style="margin:0 0 18px;">他甚至没有证明自己当时的决定是对的。</p>
+      <p style="margin:0 0 18px;">但他也没有因为输掉一个职位，就毁掉仍然属于自己的价值。</p>
+      <p style="margin:0 0 18px;">很多失败真正伤人的地方，不是失去什么。</p>
+      <p style="margin:0 0 18px;">是人在愤怒中非要证明自己，最后把还能留下的东西也一起砸碎。</p>
+
+      <section style="margin:30px 0 26px;padding:21px 19px;background:#f6f4f0;border-left:3px solid #d95436;border-radius:0 6px 6px 0;">
+        <p style="margin:0 0 9px;color:#243247;font-size:18px;line-height:1.7;font-weight:700;">那趟蜜月结束时，马斯克回到硅谷。</p>
+        <p style="margin:0 0 9px;color:#243247;font-size:18px;line-height:1.7;font-weight:700;">CEO的椅子已经没了。</p>
+        <p style="margin:0;color:#d95436;font-size:18px;line-height:1.7;font-weight:700;">但他的股份，还安静地留在手里。</p>
+      </section>
+
+      <section style="margin:29px 0;padding:16px 18px;background:#243247;border-radius:6px;text-align:center;">
+        <p style="margin:0;color:#ffffff;font-size:15px;line-height:1.8;font-weight:650;letter-spacing:.4px;">如果喜欢这个系列，欢迎点赞、关注、收藏。</p>
+      </section>
+
+      <section style="margin:32px 0 0;padding-top:20px;border-top:1px solid #e8e3dc;">
+        <p style="margin:0;color:#d95436;font-size:14px;line-height:1.8;font-weight:650;">下一篇：马斯克为什么总爱定一个不可能完成的期限。</p>
+      </section>
+
+      <section style="margin:28px 0 0;padding:15px 16px;background:#fbfaf7;border:1px solid #ebe7e1;border-radius:6px;">
+        <p style="margin:0 0 8px;color:#756f68;font-size:12px;line-height:1.7;font-weight:650;">资料来源</p>
+        <p style="margin:0;color:#8a847d;font-size:11px;line-height:1.8;">PayPal向美国证券交易委员会提交的文件、Walter Isaacson所著马斯克传记的公开报道，以及eBay收购PayPal的公告。图片为GPT Image生成的叙事插画，并非历史照片。</p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    const statusNode = document.getElementById('status');
+    const articleNode = document.getElementById('wechat-body');
+    const titleNode = document.getElementById('article-title');
+    function setStatus(message) {
+      statusNode.textContent = message;
+      window.clearTimeout(setStatus.timer);
+      setStatus.timer = window.setTimeout(() => { statusNode.textContent = '先复制标题，再复制正文到公众号编辑器'; }, 3200);
+    }
+    async function copyPlain(text) {
+      if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return; }
+      const area = document.createElement('textarea');
+      area.value = text; area.style.position = 'fixed'; area.style.opacity = '0';
+      document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove();
+    }
+    async function copyRich(node) {
+      const html = node.innerHTML;
+      const plain = node.innerText;
+      if (navigator.clipboard && window.ClipboardItem && window.isSecureContext) {
+        await navigator.clipboard.write([new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([plain], { type: 'text/plain' })
+        })]); return;
+      }
+      const range = document.createRange(); range.selectNodeContents(node);
+      const selection = window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      document.execCommand('copy'); selection.removeAllRanges();
+    }
+    document.getElementById('copy-title').addEventListener('click', async () => {
+      try { await copyPlain(titleNode.textContent.trim()); setStatus('标题已复制，请粘贴到公众号标题栏。'); }
+      catch (error) { setStatus('复制失败，请长按标题手动复制。'); }
+    });
+    document.getElementById('copy-body').addEventListener('click', async () => {
+      try { await copyRich(articleNode); setStatus('排版正文已复制，请粘贴到公众号正文区。'); }
+      catch (error) { setStatus('自动复制失败，请长按正文选择复制。'); }
+    });
+  </script>
+</body>
+</html>
