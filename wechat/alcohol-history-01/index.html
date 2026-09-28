@@ -70,4 +70,6 @@ async function plainCopy(value){if(navigator.clipboard&&window.isSecureContext){
 async function richCopy(node){if(navigator.clipboard&&window.ClipboardItem&&window.isSecureContext){await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([node.innerHTML],{type:'text/html'}),'text/plain':new Blob([node.innerText],{type:'text/plain'})})]);return}const range=document.createRange();range.selectNodeContents(node);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);if(!document.execCommand('copy'))throw Error('copy');selection.removeAllRanges()}
 document.getElementById('copy-title').addEventListener('click',async()=>{try{await plainCopy(titleNode.textContent.trim());status('标题已复制，请粘贴到公众号标题栏。')}catch(e){status('复制失败，请长按标题手动复制。')}});
 document.getElementById('copy-body').addEventListener('click',async()=>{try{await richCopy(articleNode);status('排版正文已复制，请粘贴到公众号正文区。')}catch(e){status('复制失败，请长按正文手动复制。')}});
-</script></body></html>
+</script>
+<nav aria-label="文章导航" style="max-width:677px;margin:24px auto 48px;padding:0 22px;text-align:center;font:14px -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;"><a href="/wechat/" style="color:#243247;text-decoration:underline;text-underline-offset:4px;">← 查看全部文章</a></nav>
+</body></html>
