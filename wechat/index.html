@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -13,21 +15,57 @@
   <div class="wrap">
     <nav class="top"><a href="/">← 返回网站首页</a></nav>
     <header><div class="eyebrow">古今一念间 / ARTICLES</div><h1>文章目录</h1><p>从历史看人性、命运与选择。<br>这里收录已发布的公众号文章。</p></header>
-    <main>
-      <section class="group" aria-labelledby="musk"><h2 id="musk">马斯克的选择</h2><p>在事业的转折点，他做了什么选择？</p>
-        <a class="card" href="/wechat/musk-01/"><span class="meta">01 · 马斯克的选择</span><span class="arrow">↗</span><span class="title">只够救一家公司，马斯克却不肯选</span><span class="desc">2008 年，特斯拉和 SpaceX 同时站在悬崖边。</span></a>
-        <a class="card" href="/wechat/musk-02/"><span class="meta">02 · 马斯克的选择</span><span class="arrow">↗</span><span class="title">前三次都失败，马斯克为什么还敢押上第四次</span><span class="desc">猎鹰 1 号第四次发射前的最后一搏。</span></a>
-        <a class="card" href="/wechat/musk-03/"><span class="meta">03 · 马斯克的选择</span><span class="arrow">↗</span><span class="title">赚到1.8亿美元后，马斯克为什么又把自己变穷</span><span class="desc">PayPal 出售后，他把钱投向了新的事业。</span></a>
-        <a class="card" href="/wechat/musk-04/"><span class="meta">04 · 马斯克的选择</span><span class="arrow">↗</span><span class="title">度蜜月时被罢免，马斯克为什么没有掀桌</span><span class="desc">失去 CEO 职位后，他保留了手里的股份。</span></a>
-      </section>
-      <section class="group" aria-labelledby="history"><h2 id="history">历史与生活</h2><p>从日常事物出发，读懂它们的来处。</p>
-        <a class="card" href="/wechat/alcohol-history-01/"><span class="meta">酒文化 · 历史故事</span><span class="arrow">↗</span><span class="title">一杯酒，陪了人类9000年</span><span class="desc">从贾湖遗址到世界各地的名酒故事。</span></a>
-      </section>
-      <section class="group" aria-labelledby="maps"><h2 id="maps">历史地图</h2><p>用地图观察历史变迁。</p>
-        <a class="card" href="/wechat/china-territory-history-01/"><span class="meta">中国疆域 · 历史地图</span><span class="arrow">↗</span><span class="title">中国的版图，是怎么一步步变成今天这样的？</span><span class="desc">从战国到现代，沿着时间线看版图变化。</span></a>
-      </section>
-    </main>
+    <main id="articles" aria-live="polite"><p class="notice" style="padding:35px 0;color:#77716b;">正在读取文章…</p></main>
     <footer>古今一念间 · 文章目录</footer>
   </div>
+  <script>
+    // Pages 构建时列出文章文件，浏览器读取每篇页面中的真实标题。
+    const files = [
+      {% for file in site.static_files %}{% if file.path contains '/wechat/' and file.path contains '/index.html' %}{{ file.path | remove: 'index.html' | relative_url | jsonify }},
+      {% endif %}{% endfor %}
+      {% for article in site.pages %}{% if article.path contains 'wechat/' and article.path contains '/index.html' %}{{ article.path | remove: 'index.html' | relative_url | jsonify }},
+      {% endif %}{% endfor %}
+    ];
+    const paths = [...new Set(files)].filter(path => /\/wechat\/[^/]+\/$/.test(path));
+    const groups = [
+      {name:'马斯克的选择', test:slug=>slug.startsWith('musk-')},
+      {name:'历史与生活', test:slug=>slug.startsWith('alcohol-')},
+      {name:'历史地图', test:slug=>slug.startsWith('china-territory-')},
+      {name:'更多文章', test:()=>true}
+    ];
+    const main = document.getElementById('articles');
+    Promise.all(paths.map(async path => {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`${path}: ${response.status}`);
+      const page = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const title = page.querySelector('#article-title, h1')?.textContent.trim();
+      if (!title) throw new Error(`${path}: 找不到文章标题`);
+      return {path, title, slug:path.split('/').filter(Boolean).at(-1)};
+    })).then(articles => {
+      main.replaceChildren();
+      if (!articles.length) { main.innerHTML = '<p class="notice">还没有发布文章。</p>'; return; }
+      for (const group of groups) {
+        const items = articles.filter(article => group.test(article.slug) && groups.find(g => g.test(article.slug)) === group)
+          .sort((a,b) => a.slug.localeCompare(b.slug, 'zh-CN', {numeric:true}));
+        if (!items.length) continue;
+        const section = document.createElement('section');
+        section.className = 'group';
+        const heading = document.createElement('h2'); heading.textContent = group.name; section.append(heading);
+        for (const article of items) {
+          const link = document.createElement('a'); link.className = 'card'; link.href = article.path;
+          const meta = document.createElement('span'); meta.className = 'meta';
+          const number = article.slug.match(/-(\d+)$/)?.[1];
+          meta.textContent = number ? `${number} · ${group.name}` : group.name;
+          const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '↗';
+          const title = document.createElement('span'); title.className = 'title'; title.textContent = article.title;
+          link.append(meta, arrow, title); section.append(link);
+        }
+        main.append(section);
+      }
+    }).catch(error => {
+      console.error('读取文章目录失败', error);
+      main.innerHTML = '<p class="notice">文章目录暂时无法读取，请稍后刷新页面。</p>';
+    });
+  </script>
 </body>
 </html>
